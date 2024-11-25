@@ -21,5 +21,5 @@ jobs:
         build-scan-terms-of-use-url: "https://gradle.com/terms-of-service"
         build-scan-terms-of-use-agree: "yes"
 
-    - name: Run build # change the command below to whatever you need to reproduce the issue
-      run: gradle help --info
+    - name: Run compileFeatureJava # change the command below to whatever you need to reproduce the issue
+      run: gradle compileFeatureJava --info
