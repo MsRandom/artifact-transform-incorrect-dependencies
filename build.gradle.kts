@@ -10,8 +10,8 @@ abstract class Transform : TransformAction<TransformParameters.None> {
         @InputArtifactDependencies get
 
     override fun transform(outputs: TransformOutputs) {
-        for (dependency in dependencies) {
-            println("Dependency: $dependency")
+        if (dependencies.files.isNotEmpty()) {
+            throw RuntimeException("Expected no dependencies for generated Jar transform, got: ${dependencies.toList()}")
         }
 
         outputs.file(input)
